@@ -1,6 +1,6 @@
 using _Project.Scripts.Configs;
 using _Project.Scripts.ECS;
-using _Project.Scripts.ECS.Systems;
+using _Project.Scripts.ECS.Components;
 using UnityEngine;
 using Zenject;
 

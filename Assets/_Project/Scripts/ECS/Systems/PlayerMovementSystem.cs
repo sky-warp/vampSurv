@@ -1,12 +1,35 @@
+using _Project.Scripts.ECS.Components;
 using Leopotam.EcsLite;
+using UnityEngine;
 
 namespace _Project.Scripts.ECS.Systems
 {
-    public class PlayerMovementSystem : IEcsRunSystem
+    public class PlayerMovementSystem : IEcsRunSystem, IEcsInitSystem
     {
+        private EcsWorld _world;
+        private EcsFilter _movableEntitiesFilter;
+        private EcsPool<InputComponent> _inputPool;
+        private EcsPool<MovableComponent> _movablePool;
+        
+        public void Init(IEcsSystems systems)
+        {
+            _world = systems.GetWorld();
+            
+            _movableEntitiesFilter = _world.Filter<MovableComponent>().Inc<InputComponent>().End();
+            
+            _inputPool = _world.GetPool<InputComponent>();
+            _movablePool = _world.GetPool<MovableComponent>();
+        }
+        
         public void Run(IEcsSystems systems)
         {
-            
+            foreach (int entities in _movableEntitiesFilter)
+            {
+                ref var entityMove = ref _movablePool.Get(entities);
+                ref var entityInput = ref _inputPool.Get(entities);
+                
+                entityMove.Transform.position += new Vector3(entityInput.Direction.X,entityInput.Direction.Y,0) * Time.deltaTime * entityMove.Speed;
+            }
         }
     }
 }

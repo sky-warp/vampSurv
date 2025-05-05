@@ -16,6 +16,7 @@ namespace _Project.Scripts.ECS
             _systems = new EcsSystems(_world);
 
             _systems.Add(new PlayerInitSystem());
+            _systems.Add(new PlayerInputSystem());
             _systems.Add(new PlayerMovementSystem());
             
             _systems.Init();
