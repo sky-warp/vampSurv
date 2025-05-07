@@ -21,15 +21,16 @@ namespace _Project.Scripts.ECS.Systems
 
             var go = GameObject.Instantiate(playerData.PlayerPrefab);
             
-            EcsPool<MovableComponent> movablePool = world.GetPool<MovableComponent>();
+            EcsPool<PlayerMovementComponent> movablePool = world.GetPool<PlayerMovementComponent>();
             ref var playerMovement = ref movablePool.Add(player);
             playerMovement.Speed = playerData.Speed;
             playerMovement.MoveDecay = playerData.Decay;
             playerMovement.PlayerBody = go.GetComponent<Rigidbody2D>();
+            playerMovement.PlayerTransform = go.GetComponent<Transform>();
             
             EcsPool<AnimatorComponent> animatorPool = world.GetPool<AnimatorComponent>();
             ref var playerAnimator = ref animatorPool.Add(player);
-            playerAnimator.PlayerAnimator = playerData.PlayerAnimator;
+            playerAnimator.PlayerAnimator = go.GetComponent<Animator>();
 
             EcsPool<InputComponent> inputPool = world.GetPool<InputComponent>();
             inputPool.Add(player);

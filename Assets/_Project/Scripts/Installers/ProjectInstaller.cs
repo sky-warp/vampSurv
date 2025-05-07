@@ -24,7 +24,7 @@ namespace _Project.Scripts.Installers
             Container
                 .Bind<PlayerDataComponent>()
                 .AsSingle()
-                .WithArguments(_config.PlayerPrefab, _config.PlayerAnimator, _config.PlayerSpeed, _config.MovementDecay);
+                .WithArguments(_config.PlayerPrefab, _config.PlayerSpeed, _config.MovementDecay);
         }
     }
 }

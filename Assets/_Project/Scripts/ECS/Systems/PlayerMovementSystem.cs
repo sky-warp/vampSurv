@@ -10,16 +10,16 @@ namespace _Project.Scripts.ECS.Systems
         private EcsWorld _world;
         private EcsFilter _movableEntitiesFilter;
         private EcsPool<InputComponent> _inputPool;
-        private EcsPool<MovableComponent> _movablePool;
+        private EcsPool<PlayerMovementComponent> _movablePool;
 
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
 
-            _movableEntitiesFilter = _world.Filter<MovableComponent>().Inc<InputComponent>().End();
+            _movableEntitiesFilter = _world.Filter<PlayerMovementComponent>().Inc<InputComponent>().End();
 
             _inputPool = _world.GetPool<InputComponent>();
-            _movablePool = _world.GetPool<MovableComponent>();
+            _movablePool = _world.GetPool<PlayerMovementComponent>();
         }
         
         public void Run(IEcsSystems systems)

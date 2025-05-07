@@ -19,6 +19,7 @@ namespace _Project.Scripts.ECS
 
             _defaultSystems.Add(new PlayerInitSystem());
             _defaultSystems.Add(new PlayerInputSystem());
+            _defaultSystems.Add(new MoveAnimationSystem());
 
             _physicsSystems.Add(new PlayerMovementSystem());
             
