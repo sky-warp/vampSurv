@@ -28,7 +28,7 @@ namespace _Project.Scripts.ECS.Systems
             playerMovement.PlayerBody = go.GetComponent<Rigidbody2D>();
             playerMovement.PlayerTransform = go.GetComponent<Transform>();
             
-            EcsPool<AnimatorComponent> animatorPool = world.GetPool<AnimatorComponent>();
+            EcsPool<AnimationComponent> animatorPool = world.GetPool<AnimationComponent>();
             ref var playerAnimator = ref animatorPool.Add(player);
             playerAnimator.PlayerAnimator = go.GetComponent<Animator>();
 

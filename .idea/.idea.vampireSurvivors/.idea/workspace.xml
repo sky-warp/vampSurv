@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0f5cb71-269a-4e7e-a7b5-a4e98f9b4403" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/MoveAnimationSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/MoveAnimationSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.vampireSurvivors/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.vampireSurvivors/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Configs/PlayerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Configs/PlayerConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/MovableComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/PlayerMovementComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/MovableComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/PlayerMovementComponent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/PlayerDataComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/PlayerDataComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Loader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Loader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/PlayerAnimation.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/PlayerAnimation.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/PlayerIdle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/PlayerIdle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/AnimatorComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/AnimationComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/AnimatorComponent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/AnimationComponent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/MoveAnimationSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/MoveAnimationSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/PlayerInitSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/PlayerInitSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/PlayerInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/PlayerInputSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/PlayerMovementSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/PlayerMovementSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Installers/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Installers/ProjectInstaller.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +118,7 @@
       <workItem from="1746285845624" duration="572000" />
       <workItem from="1746286437746" duration="12444000" />
       <workItem from="1746450353829" duration="7136000" />
-      <workItem from="1746616323222" duration="7236000" />
+      <workItem from="1746616323222" duration="8560000" />
     </task>
     <servers />
   </component>
