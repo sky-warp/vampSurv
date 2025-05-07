@@ -1,3 +1,4 @@
+using System;
 using _Project.Scripts.ECS.Components;
 using Leopotam.EcsLite;
 using UnityEngine;
@@ -8,29 +9,46 @@ namespace _Project.Scripts.ECS.Systems
     {
         private EcsWorld _world;
         private EcsFilter _inputFilter;
+        private EcsFilter _movableFilter;
         private EcsPool<InputComponent> _inputPool;
+        private EcsPool<MovableComponent> _movablePool;
         
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
 
             _inputFilter = _world.Filter<InputComponent>().End();
+            _movableFilter = _world.Filter<MovableComponent>().End();
             
             _inputPool = _world.GetPool<InputComponent>();
+            _movablePool = _world.GetPool<MovableComponent>();
         }
         
         public void Run(IEcsSystems systems)
         {
-            float x  = Input.GetAxis("Horizontal");
-            float y = Input.GetAxis("Vertical");
+            float x  = Input.GetAxisRaw("Horizontal");
+            float y = Input.GetAxisRaw("Vertical");
 
-            if (x != 0 || y != 0)
+            if (Math.Abs(x) > 0 || Math.Abs(y) > 0)
             {
                 foreach (int entities in _inputFilter)
                 {
+                    foreach (int moveEntities in _movableFilter)
+                    {
+                        ref var moveEntity = ref _movablePool.Get(moveEntities);
+                        moveEntity.IsMoving = true;
+                    }
                     ref var entity = ref _inputPool.Get(entities);
                     entity.Direction.X = x;
                     entity.Direction.Y = y;
+                }
+            }
+            else
+            {
+                foreach (int moveEntities in _movableFilter)
+                {
+                    ref var moveEntity = ref _movablePool.Get(moveEntities);
+                    moveEntity.IsMoving = false;
                 }
             }
         }

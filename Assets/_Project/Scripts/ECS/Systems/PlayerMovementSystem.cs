@@ -1,6 +1,7 @@
 using _Project.Scripts.ECS.Components;
 using Leopotam.EcsLite;
 using UnityEngine;
+using Zenject;
 
 namespace _Project.Scripts.ECS.Systems
 {
@@ -10,13 +11,13 @@ namespace _Project.Scripts.ECS.Systems
         private EcsFilter _movableEntitiesFilter;
         private EcsPool<InputComponent> _inputPool;
         private EcsPool<MovableComponent> _movablePool;
-        
+
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
-            
+
             _movableEntitiesFilter = _world.Filter<MovableComponent>().Inc<InputComponent>().End();
-            
+
             _inputPool = _world.GetPool<InputComponent>();
             _movablePool = _world.GetPool<MovableComponent>();
         }
@@ -27,8 +28,15 @@ namespace _Project.Scripts.ECS.Systems
             {
                 ref var entityMove = ref _movablePool.Get(entities);
                 ref var entityInput = ref _inputPool.Get(entities);
-                
-                entityMove.Transform.position += new Vector3(entityInput.Direction.X,entityInput.Direction.Y,0) * Time.deltaTime * entityMove.Speed;
+
+                Vector2 direction = new Vector2(entityInput.Direction.X, entityInput.Direction.Y);
+                Vector2 newVelocity = entityMove.PlayerBody.linearVelocity + direction;
+                newVelocity = Vector2.ClampMagnitude(newVelocity, entityMove.Speed);
+
+                if (entityMove.IsMoving)
+                    entityMove.PlayerBody.linearVelocity = newVelocity;
+                else
+                    entityMove.PlayerBody.linearVelocity *= entityMove.MoveDecay;
             }
         }
     }

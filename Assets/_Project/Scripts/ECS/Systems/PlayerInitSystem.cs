@@ -24,7 +24,8 @@ namespace _Project.Scripts.ECS.Systems
             EcsPool<MovableComponent> movablePool = world.GetPool<MovableComponent>();
             ref var playerMovement = ref movablePool.Add(player);
             playerMovement.Speed = playerData.Speed;
-            playerMovement.Transform = go.transform;
+            playerMovement.MoveDecay = playerData.Decay;
+            playerMovement.PlayerBody = go.GetComponent<Rigidbody2D>();
             
             EcsPool<AnimatorComponent> animatorPool = world.GetPool<AnimatorComponent>();
             ref var playerAnimator = ref animatorPool.Add(player);

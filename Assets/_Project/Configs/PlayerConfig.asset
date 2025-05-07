@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PlayerPrefab>k__BackingField: {fileID: 398629284461562779, guid: c987541cb22bbb848b6322967b07ba88, type: 3}
   <PlayerAnimator>k__BackingField: {fileID: 8043192948118093572, guid: c987541cb22bbb848b6322967b07ba88, type: 3}
-  <PlayerSpeed>k__BackingField: 10
+  <PlayerSpeed>k__BackingField: 5
+  <MovementDecay>k__BackingField: 0.4

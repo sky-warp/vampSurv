@@ -7,31 +7,40 @@ namespace _Project.Scripts.ECS
     public class Loader : MonoBehaviour
     {
         private EcsWorld _world;
-        private EcsSystems _systems;
+        private EcsSystems _defaultSystems;
+        private EcsSystems _physicsSystems;
         
         private void Start()
         {
             
             _world = new EcsWorld();
-            _systems = new EcsSystems(_world);
+            _defaultSystems = new EcsSystems(_world);
+            _physicsSystems = new EcsSystems(_world);
 
-            _systems.Add(new PlayerInitSystem());
-            _systems.Add(new PlayerInputSystem());
-            _systems.Add(new PlayerMovementSystem());
+            _defaultSystems.Add(new PlayerInitSystem());
+            _defaultSystems.Add(new PlayerInputSystem());
+
+            _physicsSystems.Add(new PlayerMovementSystem());
             
-            _systems.Init();
+            _defaultSystems.Init();
+            _physicsSystems.Init();
         }
 
         private void Update()
         {
-            _systems.Run();
+            _defaultSystems?.Run();
         }
 
+        private void FixedUpdate()
+        {
+            _physicsSystems?.Run();
+        }
+        
         private void OnDestroy()
         {
-            _systems.Destroy();
+            _defaultSystems?.Destroy();
             
-            _world.Destroy();
+            _world?.Destroy();
         }
     }
 }

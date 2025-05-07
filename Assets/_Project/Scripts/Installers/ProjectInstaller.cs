@@ -1,6 +1,7 @@
 using _Project.Scripts.Configs;
 using _Project.Scripts.ECS;
 using _Project.Scripts.ECS.Components;
+using _Project.Scripts.ECS.Systems;
 using UnityEngine;
 using Zenject;
 
@@ -22,8 +23,8 @@ namespace _Project.Scripts.Installers
             
             Container
                 .Bind<PlayerDataComponent>()
-                .AsCached()
-                .WithArguments(_config.PlayerPrefab, _config.PlayerAnimator, _config.PlayerSpeed);
+                .AsSingle()
+                .WithArguments(_config.PlayerPrefab, _config.PlayerAnimator, _config.PlayerSpeed, _config.MovementDecay);
         }
     }
 }
