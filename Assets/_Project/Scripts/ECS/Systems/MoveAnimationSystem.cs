@@ -8,7 +8,7 @@ namespace _Project.Scripts.ECS.Systems
     {
         private EcsWorld _world;
         private EcsFilter _moveAnimatedFilter;
-        private EcsPool<PlayerMovementComponent> _playerMovementPool;
+        private EcsPool<MovementComponent> _playerMovementPool;
         private EcsPool<InputComponent> _playerInputPool;
         private EcsPool<AnimationComponent> _animationPool;
 
@@ -16,10 +16,10 @@ namespace _Project.Scripts.ECS.Systems
         {
             _world = systems.GetWorld();
 
-            _moveAnimatedFilter = _world.Filter<PlayerMovementComponent>().Inc<InputComponent>().Inc<AnimationComponent>().End();
+            _moveAnimatedFilter = _world.Filter<MovementComponent>().Inc<InputComponent>().Inc<AnimationComponent>().End();
 
             _playerInputPool = _world.GetPool<InputComponent>();
-            _playerMovementPool = _world.GetPool<PlayerMovementComponent>();
+            _playerMovementPool = _world.GetPool<MovementComponent>();
             _animationPool = _world.GetPool<AnimationComponent>();
         }
 

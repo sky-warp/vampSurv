@@ -5,7 +5,7 @@ using Zenject;
 
 namespace _Project.Scripts.ECS.Systems
 {
-    public class PlayerInitSystem : IEcsInitSystem
+    public class InitSystem : IEcsInitSystem
     {
         public void Init(IEcsSystems systems)
         {
@@ -21,7 +21,7 @@ namespace _Project.Scripts.ECS.Systems
 
             var go = GameObject.Instantiate(playerData.PlayerPrefab);
             
-            EcsPool<PlayerMovementComponent> movablePool = world.GetPool<PlayerMovementComponent>();
+            EcsPool<MovementComponent> movablePool = world.GetPool<MovementComponent>();
             ref var playerMovement = ref movablePool.Add(player);
             playerMovement.Speed = playerData.Speed;
             playerMovement.MoveDecay = playerData.Decay;

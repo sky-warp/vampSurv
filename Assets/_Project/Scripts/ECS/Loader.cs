@@ -17,11 +17,11 @@ namespace _Project.Scripts.ECS
             _defaultSystems = new EcsSystems(_world);
             _physicsSystems = new EcsSystems(_world);
 
-            _defaultSystems.Add(new PlayerInitSystem());
-            _defaultSystems.Add(new PlayerInputSystem());
+            _defaultSystems.Add(new InitSystem());
+            _defaultSystems.Add(new InputSystem());
             _defaultSystems.Add(new MoveAnimationSystem());
 
-            _physicsSystems.Add(new PlayerMovementSystem());
+            _physicsSystems.Add(new MovementSystem());
             
             _defaultSystems.Init();
             _physicsSystems.Init();

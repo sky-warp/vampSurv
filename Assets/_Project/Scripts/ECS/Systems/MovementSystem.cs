@@ -1,25 +1,24 @@
 using _Project.Scripts.ECS.Components;
 using Leopotam.EcsLite;
 using UnityEngine;
-using Zenject;
 
 namespace _Project.Scripts.ECS.Systems
 {
-    public class PlayerMovementSystem : IEcsRunSystem, IEcsInitSystem
+    public class MovementSystem : IEcsRunSystem, IEcsInitSystem
     {
         private EcsWorld _world;
         private EcsFilter _movableEntitiesFilter;
         private EcsPool<InputComponent> _inputPool;
-        private EcsPool<PlayerMovementComponent> _movablePool;
+        private EcsPool<MovementComponent> _movablePool;
 
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
 
-            _movableEntitiesFilter = _world.Filter<PlayerMovementComponent>().Inc<InputComponent>().End();
+            _movableEntitiesFilter = _world.Filter<MovementComponent>().Inc<InputComponent>().End();
 
             _inputPool = _world.GetPool<InputComponent>();
-            _movablePool = _world.GetPool<PlayerMovementComponent>();
+            _movablePool = _world.GetPool<MovementComponent>();
         }
         
         public void Run(IEcsSystems systems)

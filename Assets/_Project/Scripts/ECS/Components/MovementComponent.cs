@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.ECS.Components
 {
-    public struct PlayerMovementComponent
+    public struct MovementComponent
     {
         public Transform PlayerTransform;
         public Rigidbody2D PlayerBody;

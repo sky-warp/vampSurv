@@ -5,23 +5,23 @@ using UnityEngine;
 
 namespace _Project.Scripts.ECS.Systems
 {
-    public class PlayerInputSystem : IEcsRunSystem, IEcsInitSystem
+    public class InputSystem : IEcsRunSystem, IEcsInitSystem
     {
         private EcsWorld _world;
         private EcsFilter _inputFilter;
         private EcsFilter _movableFilter;
         private EcsPool<InputComponent> _inputPool;
-        private EcsPool<PlayerMovementComponent> _movablePool;
+        private EcsPool<MovementComponent> _movablePool;
         
         public void Init(IEcsSystems systems)
         {
             _world = systems.GetWorld();
 
             _inputFilter = _world.Filter<InputComponent>().End();
-            _movableFilter = _world.Filter<PlayerMovementComponent>().End();
+            _movableFilter = _world.Filter<MovementComponent>().End();
             
             _inputPool = _world.GetPool<InputComponent>();
-            _movablePool = _world.GetPool<PlayerMovementComponent>();
+            _movablePool = _world.GetPool<MovementComponent>();
         }
         
         public void Run(IEcsSystems systems)
