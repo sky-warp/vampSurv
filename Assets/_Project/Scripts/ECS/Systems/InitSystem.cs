@@ -7,17 +7,22 @@ namespace _Project.Scripts.ECS.Systems
 {
     public class InitSystem : IEcsInitSystem
     {
+        private DiContainer _container;
+
+        public InitSystem(DiContainer container)
+        {
+            _container = container;
+        }
+        
         public void Init(IEcsSystems systems)
         {
             var world = systems.GetWorld();
 
             int player = world.NewEntity();
             
-            var container = ProjectContext.Instance.Container;
-            
             EcsPool<PlayerDataComponent> playerDataPool = world.GetPool<PlayerDataComponent>();
             ref var playerData = ref playerDataPool.Add(player);
-            playerData = container.Resolve<PlayerDataComponent>();
+            playerData = _container.Resolve<PlayerDataComponent>();
 
             var go = GameObject.Instantiate(playerData.PlayerPrefab);
             

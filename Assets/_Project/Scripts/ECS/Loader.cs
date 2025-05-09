@@ -1,6 +1,7 @@
 using _Project.Scripts.ECS.Systems;
 using Leopotam.EcsLite;
 using UnityEngine;
+using Zenject;
 
 namespace _Project.Scripts.ECS
 {
@@ -9,15 +10,21 @@ namespace _Project.Scripts.ECS
         private EcsWorld _world;
         private EcsSystems _defaultSystems;
         private EcsSystems _physicsSystems;
+        private DiContainer _container;
+
+        [Inject]
+        private void Construct(DiContainer container)
+        {
+            _container = container;
+        }
         
         private void Start()
         {
-            
             _world = new EcsWorld();
             _defaultSystems = new EcsSystems(_world);
             _physicsSystems = new EcsSystems(_world);
 
-            _defaultSystems.Add(new InitSystem());
+            _defaultSystems.Add(new InitSystem(_container));
             _defaultSystems.Add(new InputSystem());
             _defaultSystems.Add(new MoveAnimationSystem());
 
