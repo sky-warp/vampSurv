@@ -8,9 +8,11 @@ namespace _Project.Scripts.ECS
     public class Loader : MonoBehaviour
     {
         private EcsWorld _world;
+        
         private EcsSystems _defaultSystems;
         private EcsSystems _physicsSystems;
         private EcsSystems _cameraSystems;
+        
         private DiContainer _container;
 
         [Inject]
@@ -27,6 +29,7 @@ namespace _Project.Scripts.ECS
             _cameraSystems = new EcsSystems(_world);
 
             _defaultSystems.Add(new InitSystem(_container));
+            _defaultSystems.Add(new EnemyInitSystem(_container));
             _defaultSystems.Add(new InputSystem());
             _defaultSystems.Add(new MoveAnimationSystem());
 
@@ -57,6 +60,8 @@ namespace _Project.Scripts.ECS
         private void OnDestroy()
         {
             _defaultSystems?.Destroy();
+            _physicsSystems?.Destroy();
+            _cameraSystems?.Destroy();
             
             _world?.Destroy();
         }

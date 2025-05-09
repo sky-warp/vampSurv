@@ -1,7 +1,6 @@
 using _Project.Scripts.Configs;
 using _Project.Scripts.ECS;
 using _Project.Scripts.ECS.Components;
-using _Project.Scripts.ECS.Systems;
 using UnityEngine;
 using Zenject;
 
@@ -10,7 +9,8 @@ namespace _Project.Scripts.Installers
     public class SceneMainInstaller : MonoInstaller
     {
         [SerializeField] private Loader _loaderPrefab;
-        [SerializeField] private PlayerConfig _config;
+        [SerializeField] private PlayerConfig _playerConfig;
+        [SerializeField] private EnemyConfig _enemyConfig;
         
         public override void InstallBindings()
         {
@@ -26,9 +26,14 @@ namespace _Project.Scripts.Installers
                 .NonLazy();
             
             Container
-                .Bind<PlayerDataComponent>()
+                .Bind<PlayerComponent>()
                 .AsSingle()
-                .WithArguments(_config.PlayerPrefab, _config.PlayerSpeed, _config.MovementDecay);
+                .WithArguments(_playerConfig);
+            
+            Container
+                .Bind<DefaultEnemyComponent>()
+                .AsSingle()
+                .WithArguments(_enemyConfig);
         }
     }
 }

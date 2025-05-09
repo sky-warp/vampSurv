@@ -21,9 +21,9 @@ namespace _Project.Scripts.ECS.Systems
             int player = world.NewEntity();
             int cameraFollower = world.NewEntity();
             
-            EcsPool<PlayerDataComponent> playerDataPool = world.GetPool<PlayerDataComponent>();
+            EcsPool<PlayerComponent> playerDataPool = world.GetPool<PlayerComponent>();
             ref var playerData = ref playerDataPool.Add(player);
-            playerData = _container.Resolve<PlayerDataComponent>();
+            playerData = _container.Resolve<PlayerComponent>();
 
             var go = GameObject.Instantiate(playerData.PlayerPrefab);
             

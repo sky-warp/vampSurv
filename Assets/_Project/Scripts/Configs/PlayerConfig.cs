@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Configs
 {
-    [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Configs/PlayerConfig")]
+    [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Configs/Player Config")]
     public class PlayerConfig : ScriptableObject
     {
         [field: SerializeField] public GameObject PlayerPrefab { get; private set; }

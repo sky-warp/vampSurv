@@ -865,7 +865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loaderPrefab: {fileID: 2266323772401694131, guid: 9fe804927a5d6e143b51f9480f873b50, type: 3}
-  _config: {fileID: 11400000, guid: 03d8148101cf33345946c01a926fc56a, type: 2}
+  _playerConfig: {fileID: 11400000, guid: 03d8148101cf33345946c01a926fc56a, type: 2}
+  _enemyConfig: {fileID: 11400000, guid: cfd5f600b8316fe4d8a5bebd002257df, type: 2}
 --- !u!1 &1424513139
 GameObject:
   m_ObjectHideFlags: 0
