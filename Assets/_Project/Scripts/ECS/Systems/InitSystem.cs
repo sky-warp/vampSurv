@@ -19,6 +19,7 @@ namespace _Project.Scripts.ECS.Systems
             var world = systems.GetWorld();
 
             int player = world.NewEntity();
+            int cameraFollower = world.NewEntity();
             
             EcsPool<PlayerDataComponent> playerDataPool = world.GetPool<PlayerDataComponent>();
             ref var playerData = ref playerDataPool.Add(player);
@@ -39,6 +40,11 @@ namespace _Project.Scripts.ECS.Systems
 
             EcsPool<InputComponent> inputPool = world.GetPool<InputComponent>();
             inputPool.Add(player);
+            
+            EcsPool<CameraFollowerComponent> cameraPool = world.GetPool<CameraFollowerComponent>();
+            ref var attachedCamera = ref cameraPool.Add(cameraFollower);
+            attachedCamera.Camera = _container.Resolve<Camera>();
+            attachedCamera.Target = go.transform;
         }
     }
 }

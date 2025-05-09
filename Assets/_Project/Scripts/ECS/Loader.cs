@@ -10,6 +10,7 @@ namespace _Project.Scripts.ECS
         private EcsWorld _world;
         private EcsSystems _defaultSystems;
         private EcsSystems _physicsSystems;
+        private EcsSystems _cameraSystems;
         private DiContainer _container;
 
         [Inject]
@@ -23,15 +24,19 @@ namespace _Project.Scripts.ECS
             _world = new EcsWorld();
             _defaultSystems = new EcsSystems(_world);
             _physicsSystems = new EcsSystems(_world);
+            _cameraSystems = new EcsSystems(_world);
 
             _defaultSystems.Add(new InitSystem(_container));
             _defaultSystems.Add(new InputSystem());
             _defaultSystems.Add(new MoveAnimationSystem());
 
             _physicsSystems.Add(new MovementSystem());
+
+            _cameraSystems.Add(new CameraFollowSystem());
             
             _defaultSystems.Init();
             _physicsSystems.Init();
+            _cameraSystems.Init();
         }
 
         private void Update()
@@ -39,6 +44,11 @@ namespace _Project.Scripts.ECS
             _defaultSystems?.Run();
         }
 
+        private void LateUpdate()
+        {
+            _cameraSystems?.Run();
+        }
+        
         private void FixedUpdate()
         {
             _physicsSystems?.Run();
