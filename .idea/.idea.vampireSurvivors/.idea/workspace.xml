@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0f5cb71-269a-4e7e-a7b5-a4e98f9b4403" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Configs/EnemyConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Configs/EnemyConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/DefaultEnemyComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/DefaultEnemyComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/PlayerComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/EnemySpawnSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/EnemySpawnSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.vampireSurvivors/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.vampireSurvivors/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Gothicvania Swamp Artwork/Sprites/Ghost/Ghost1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Gothicvania Swamp Artwork/Sprites/Ghost/Ghost1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Player.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Player/PlayerAnimation.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Player/PlayerAnimation.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Player/PlayerIdle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Player/PlayerIdle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Player/PlayerRun.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Animations/Player/PlayerRun.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Configs/PlayerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Configs/PlayerConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/PlayerDataComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Components/PlayerDataComponent.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Loader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Loader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/InitSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/InitSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Installers/SceneMainInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Installers/SceneMainInstaller.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +120,7 @@
       <workItem from="1746450353829" duration="7136000" />
       <workItem from="1746616323222" duration="8560000" />
       <workItem from="1746782709407" duration="4779000" />
-      <workItem from="1746790153191" duration="2714000" />
+      <workItem from="1746790153191" duration="6569000" />
     </task>
     <servers />
   </component>
@@ -154,24 +137,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Project/Scripts/ECS/Systems/InitSystem.cs</url>
-          <line>65</line>
-          <properties documentPath="F:\unityProj\vampireSurvivors\Assets\_Project\Scripts\ECS\Systems\InitSystem.cs" containingFunctionPresentation="Method 'Init'">
-            <startOffsets>
-              <option value="2341" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2423" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
