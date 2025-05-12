@@ -32,7 +32,7 @@ namespace _Project.Scripts.ECS
             _defaultSystems.Add(new EnemyInitSystem(_container));
             _defaultSystems.Add(new InputSystem());
             _defaultSystems.Add(new MoveAnimationSystem());
-            _defaultSystems.Add(new EnemySpawnSystem());
+            //_defaultSystems.Add(new EnemySpawnSystem());
 
             _physicsSystems.Add(new MovementSystem());
 
