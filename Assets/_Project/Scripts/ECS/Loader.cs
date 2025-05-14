@@ -28,7 +28,7 @@ namespace _Project.Scripts.ECS
             _physicsSystems = new EcsSystems(_world);
             _cameraSystems = new EcsSystems(_world);
 
-            _defaultSystems.Add(new InitSystem(_container));
+            //_defaultSystems.Add(new InitSystem(_container));
             _defaultSystems.Add(new EnemyInitSystem(_container));
             _defaultSystems.Add(new InputSystem());
             _defaultSystems.Add(new MoveAnimationSystem());

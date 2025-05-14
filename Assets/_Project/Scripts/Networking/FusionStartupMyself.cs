@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.Networking
 {
-    public sealed class FusionStartup : MonoBehaviour, INetworkRunnerCallbacks
+    public sealed class FusionStartupMyself : MonoBehaviour, INetworkRunnerCallbacks
     {
         private NetworkRunner _runner;
 
